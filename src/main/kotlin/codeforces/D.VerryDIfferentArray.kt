@@ -20,15 +20,25 @@ fun main() {
         var ans=0L
         firstArray.sort()
         secondArray.sortDescending()
-        for (i in 0..<n){
-            val first=abs(firstArray[i]-secondArray[0])
-            val second=abs(firstArray[i]-secondArray[secondArray.size-1])
-            if(first<second){
+        var i=0
+        var j=m-1
+        var k=n-1
+        var cnt=0
+        while (i<n){
+            if(cnt==n){
+                break
+            }
+            val first=abs(firstArray[i]-secondArray[i])
+            val second=abs(firstArray[k]-secondArray[j])
+            if(first<=second){
                 ans+=second
-                secondArray.removeAt(secondArray.size-1)
+                j--
+                k--
+                cnt++
             }else{
                 ans+=first
-                secondArray.removeAt(0)
+                i++
+                cnt++
             }
         }
         println(ans)
