@@ -1,4 +1,6 @@
-class Stak(val stackSize: Int, var top: Int) {
+package leetcode
+
+class Stak(private val stackSize: Int, private var top: Int) {
     val data = CharArray(stackSize)
 
     fun push(stack: Stak, item: Char) {
@@ -32,7 +34,6 @@ class Stak(val stackSize: Int, var top: Int) {
         return stack.top
     }
 }
-
 fun main() {
     println(removeStars(readln()))
 }
