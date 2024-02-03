@@ -1,8 +1,6 @@
 package codeforces
 
 import java.util.*
-
-
 fun main() {
     val scanner = Scanner(System.`in`)
     val testcase = scanner.nextInt()
@@ -10,7 +8,7 @@ fun main() {
         val n = scanner.nextInt()
         val array1 = IntArray(n)
         val array2 = IntArray(n)
-        val map = HashMap<Int, Int>()
+        val map = mutableMapOf<Int, Int>()
         for (i in 0..<n) {
             array1[i] = scanner.nextInt()
         }
@@ -19,12 +17,12 @@ fun main() {
             map[array1[i]] = array2[i]
         }
         val sortedMap = map.toSortedMap()
-        sortedMap.forEach{
-            print("${it.key} ")
+        for (i in sortedMap.keys){
+            print("$i ")
         }
         println()
-        sortedMap.forEach{
-            print("${it.value} ")
+        for (i in sortedMap.values){
+            print("$i ")
         }
         println()
     }
