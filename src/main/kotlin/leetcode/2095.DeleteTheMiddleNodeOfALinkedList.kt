@@ -1,5 +1,7 @@
 package leetcode
 
+import src.main.kotlin.leetcode.addTwoNumbers
+
 class ListNode(var valu: Int) {
     var next: ListNode? = null
     fun counting(head: ListNode?): Int {
@@ -36,14 +38,27 @@ class ListNode(var valu: Int) {
 }
 
 fun main() {
-    var head:ListNode? = ListNode(1)
-
-    println("counting${head?.counting(head)}")
-    head=deleteMiddle(head)
-    println("counting:")
-    println(head?.counting(head))
-    println("printing")
-    head?.printList(head)
+    var head:ListNode? = ListNode(9)
+    var head2:ListNode? = ListNode(1)
+    head2?.append(head2,9)
+    head2?.append(head2,9)
+    head2?.append(head2,9)
+    head2?.append(head2,9)
+    head2?.append(head2,9)
+    head2?.append(head2,9)
+    head2?.append(head2,9)
+    head2?.append(head2,9)
+    head2?.append(head2,9)
+//    head?.append(head,3)
+//    head?.append(head,6)
+      val newHead=addTwoNumbers(head,head2)
+    newHead?.printList(newHead)
+//    println("counting${head?.counting(head)}")
+//    head=deleteMiddle(head)
+//    println("counting:")
+//    println(head?.counting(head))
+//    println("printing")
+//    head?.printList(head)
 }
 
 fun deleteMiddle(head: ListNode?): ListNode? {
