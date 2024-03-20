@@ -1,7 +1,5 @@
 package src.main.kotlin.leetcode
 
-import kotlin.math.ln
-
 fun main(){
     println( numberOfSteps(14))
 }
