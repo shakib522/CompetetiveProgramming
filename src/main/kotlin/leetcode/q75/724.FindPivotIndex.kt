@@ -1,4 +1,4 @@
-package leetcode
+package src.main.kotlin.leetcode.q75
 
 import java.util.*
 
@@ -9,7 +9,7 @@ fun main(){
     for (i in 0 ..<n){
         array[i]=scanner.nextInt()
     }
-    println(pivotIndex(array))
+    println(src.main.kotlin.leetcode.q75.pivotIndex(array))
 }
 
 fun pivotIndex(nums: IntArray): Int {

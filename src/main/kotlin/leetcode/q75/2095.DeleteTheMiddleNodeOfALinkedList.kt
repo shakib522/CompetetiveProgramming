@@ -1,6 +1,6 @@
-package leetcode
+package src.main.kotlin.leetcode.q75
 
-import src.main.kotlin.leetcode.addTwoNumbers
+import src.main.kotlin.leetcode.q75.addTwoNumbers
 
 class ListNode(var valu: Int) {
     var next: ListNode? = null
@@ -51,7 +51,7 @@ fun main() {
     head2?.append(head2,9)
 //    head?.append(head,3)
 //    head?.append(head,6)
-      val newHead=addTwoNumbers(head,head2)
+      val newHead= src.main.kotlin.leetcode.q75.addTwoNumbers(head, head2)
     newHead?.printList(newHead)
 //    println("counting${head?.counting(head)}")
 //    head=deleteMiddle(head)

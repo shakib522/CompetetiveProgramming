@@ -1,10 +1,10 @@
-package src.main.kotlin.leetcode
+package src.main.kotlin.leetcode.top100
 
 import kotlin.math.min
 
 
 fun main(){
-    val s=MinStack()
+    val s= MinStack()
     s.push(2)
     s.push(0)
     s.push(3)

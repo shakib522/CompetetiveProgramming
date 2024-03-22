@@ -1,9 +1,9 @@
-package leetcode
+package src.main.kotlin.leetcode.q75
 
 import java.util.Stack
 
 fun main(){
-    println(isValid(readln()))
+    println(src.main.kotlin.leetcode.q75.isValid(readln()))
 }
 
 fun isValid(s: String): Boolean {

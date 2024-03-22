@@ -1,4 +1,4 @@
-package src.main.kotlin.leetcode
+package src.main.kotlin.leetcode.q75
 
 fun main(){
 

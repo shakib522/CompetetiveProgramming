@@ -1,4 +1,4 @@
-package leetcode
+package src.main.kotlin.leetcode.q75
 
 import kotlin.math.max
 

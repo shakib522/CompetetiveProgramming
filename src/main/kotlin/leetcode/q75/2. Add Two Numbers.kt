@@ -1,4 +1,4 @@
-package src.main.kotlin.leetcode
+package src.main.kotlin.leetcode.q75
 
 import leetcode.ListNode
 import kotlin.math.max
@@ -23,7 +23,7 @@ fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
     var second= l2
     var ans : ListNode? = null
     var mod=0
-    for (i in 0..<max(cnt(l1), cnt(l2))){
+    for (i in 0..<max(src.main.kotlin.leetcode.q75.cnt(l1), src.main.kotlin.leetcode.q75.cnt(l2))){
        var fNum=0
         var sNum=0
         if (first != null){
@@ -33,13 +33,13 @@ fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
             sNum=second.valu
         }
         val total=fNum+sNum+mod
-        ans= append(ans,total%10)
+        ans= src.main.kotlin.leetcode.q75.append(ans, total % 10)
         mod=total/10
         first=first?.next
         second=second?.next
     }
     if (mod>0){
-        ans= append(ans,mod)
+        ans= src.main.kotlin.leetcode.q75.append(ans, mod)
     }
     return ans
 }

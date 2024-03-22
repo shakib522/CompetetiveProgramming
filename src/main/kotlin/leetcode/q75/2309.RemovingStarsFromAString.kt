@@ -1,4 +1,4 @@
-package leetcode
+package src.main.kotlin.leetcode.q75
 
 class Stak(private val stackSize: Int, private var top: Int) {
     val data = CharArray(stackSize)
