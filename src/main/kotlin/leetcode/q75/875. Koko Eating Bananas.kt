@@ -1,8 +1,6 @@
 package src.main.kotlin.leetcode.q75
 
 import java.util.*
-import kotlin.math.ceil
-import kotlin.math.min
 
 fun main(){
     val scanner= Scanner(System.`in`)
@@ -31,4 +29,16 @@ fun minEatingSpeed(piles: IntArray, h: Int): Int {
         }
     }
     return start
+}
+
+open class Car{
+    fun printCar(name:String){
+
+    }
+}
+
+class BMW:Car(){
+    fun check(){
+        printCar("BMW")
+    }
 }
