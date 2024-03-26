@@ -1,6 +1,5 @@
 package src.main.kotlin.leetcode
 
-import src.main.kotlin.leetcode.q75.binarySearch
 import java.util.*
 
 fun main(){
