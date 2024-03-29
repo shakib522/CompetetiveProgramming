@@ -1,6 +1,10 @@
 package src.main.kotlin.leetcode.top150
 
 fun main(){
+    val f= arrayOf(1,4,7,9)
+    f.forEach {
+        print("$it ")
+    }
 }
 
 fun removeDuplicates(nums: IntArray): Int {
