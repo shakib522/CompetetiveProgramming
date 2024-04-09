@@ -11,23 +11,23 @@ fun mergeTwoLists(list1: ListNode?, list2: ListNode?): ListNode? {
     while (firstNode != null && secondNode != null) {
         if (firstNode.`val` <= secondNode.`val`) {
             ans?.next = ListNode(firstNode.`val`)
-            firstNode = firstNode?.next
+            firstNode = firstNode.next
             ans = ans?.next
         } else {
             ans?.next = ListNode(secondNode.`val`)
-            secondNode = secondNode?.next
+            secondNode = secondNode.next
             ans = ans?.next
         }
     }
     while (firstNode != null) {
         ans?.next = ListNode(firstNode.`val`)
-        firstNode = firstNode?.next
+        firstNode = firstNode.next
         ans = ans?.next
 
     }
     while (secondNode != null) {
         ans?.next = ListNode(secondNode.`val`)
-        secondNode = secondNode?.next
+        secondNode = secondNode.next
         ans = ans?.next
     }
     result = result?.next
