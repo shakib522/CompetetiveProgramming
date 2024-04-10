@@ -1,7 +1,5 @@
 package src.main.kotlin.leetcode.top150
 
-import src.main.kotlin.leetcode.top100.ListNode
-
 fun removeElement(nums: IntArray, `val`: Int): Int {
     var l=0
     var r=nums.size-1
