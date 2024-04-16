@@ -2,11 +2,12 @@ package src.main.kotlin.leetcode
 
 import src.main.kotlin.leetcode.top100.ListNode
 fun main(){
-    val head=ListNode(1)
-    head.next=ListNode(2)
-    head.next?.next=ListNode(3)
-    head.next?.next?.next=ListNode(1)
-    isPalindrome(head)
+    val head=ListNode(2)
+    head.next=ListNode(1)
+    head.next?.next=ListNode(1)
+    head.next?.next?.next=ListNode(2)
+    println(isPalindromeRecursive(head,head))
+//    isPalindrome(head)
 }
 fun printLinkedList(head:ListNode?){
     var currentNode=head
@@ -16,6 +17,18 @@ fun printLinkedList(head:ListNode?){
     }
     println()
 }
+var cur:ListNode?=null
+fun isPalindromeRecursive(curNode:ListNode?,head:ListNode?):Boolean{
+    cur=head
+    if (curNode==null){
+        return true
+    }
+    val res= isPalindromeRecursive(curNode.next,head)
+    val temp= cur?.`val`
+    cur=cur?.next
+    return (temp==curNode.`val` ) && res
+}
+
 fun isPalindrome(head: ListNode?): Boolean {
     var p1=head
     var p2=head
