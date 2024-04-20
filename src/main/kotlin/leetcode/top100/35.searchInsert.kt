@@ -1,4 +1,4 @@
-package src.main.kotlin.leetcode.top100.`35`
+package src.main.kotlin.leetcode.top100
 
 import kotlin.math.max
 
