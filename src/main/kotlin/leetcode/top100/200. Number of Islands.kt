@@ -1,7 +1,7 @@
 package src.main.kotlin.leetcode.top100
 
-import java.util.Scanner
-import kotlin.math.max
+import java.util.*
+import kotlin.collections.ArrayDeque
 
 
 fun main(){
@@ -11,37 +11,48 @@ fun main(){
     sc.nextLine()
     val grid= Array(n){CharArray(m)}
     for (i in 0..<n){
-            grid[i]=sc.nextLine().toCharArray()
+        grid[i]=sc.nextLine().toCharArray()
     }
     println(numIslands(grid))
 }
 
 fun numIslands(grid: Array<CharArray>): Int {
     var ans=0
-    val vis = Array(max(grid.size, grid[0].size)) { false }
+    val vis = Array(grid.size) { Array(grid[0].size) { false } }
     for (i in grid.indices) {
-        if(!vis[i]) {
-            val res=dfs(grid, i, vis)
-            println(res)
-            if(res){
-                ans++
+        for (j in grid[i].indices) {
+            if(!vis[i][j] && grid[i][j]=='1'){
+                ans+=dfs(grid, i,j,vis)
             }
         }
     }
     return ans
 }
 
-fun dfs(grid: Array<CharArray>, node: Int, vis: Array<Boolean>) :Boolean{
-    vis[node] = true
-    var bool=false
-    for (i in grid[node].indices) {
-        if(grid[node][i]=='1'){
-            bool=true
+fun dfs(grid: Array<CharArray>, i: Int,j:Int, vis: Array<Array<Boolean>>) :Int{
+    val queue=ArrayDeque<Pair<Int,Int>>()
+    queue.add(Pair(i,j))
+    vis[i][j]=true
+    while (queue.isNotEmpty()){
+        val element=queue.removeFirst()
+        val f=element.first
+        val s=element.second
+        if(s<grid[0].size-1 && grid[f][s+1]=='1' && !vis[f][s+1]){
+            queue.add(Pair(f,s+1))
+            vis[f][s+1]=true
         }
-        if (grid.size>i&&grid[node][i] == '1' && !vis[i]) {
-            bool=true
-            dfs(grid, i, vis)
+        if(s>0 && grid[f][s-1]=='1' && !vis[f][s-1]){
+            queue.add(Pair(f,s-1))
+            vis[f][s-1]=true
+        }
+        if(f<grid.size-1 && grid[f+1][s]=='1' && !vis[f+1][s]){
+            queue.add(Pair(f+1,s))
+            vis[f+1][s]=true
+        }
+        if(f>0 && grid[f-1][s]=='1' &&!vis[f-1][s]){
+            queue.add(Pair(f-1,s))
+            vis[f-1][s]=true
         }
     }
-    return bool
+    return 1
 }
