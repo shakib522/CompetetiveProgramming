@@ -22,14 +22,14 @@ fun numIslands(grid: Array<CharArray>): Int {
     for (i in grid.indices) {
         for (j in grid[i].indices) {
             if(!vis[i][j] && grid[i][j]=='1'){
-                ans+=dfs(grid, i,j,vis)
+                ans+=bfs(grid, i,j,vis)
             }
         }
     }
     return ans
 }
 
-fun dfs(grid: Array<CharArray>, i: Int,j:Int, vis: Array<Array<Boolean>>) :Int{
+fun bfs(grid: Array<CharArray>, i: Int,j:Int, vis: Array<Array<Boolean>>) :Int{
     val queue=ArrayDeque<Pair<Int,Int>>()
     queue.add(Pair(i,j))
     vis[i][j]=true
