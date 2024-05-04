@@ -7,7 +7,6 @@ fun minReorder(n: Int, connections: Array<IntArray>): Int {
         adj[con[0]].add(Pair(con[1],1))
         adj[con[1]].add(Pair(con[0],0))
     }
-    println("adj list: $adj")
     dfs(adj,0,-1)
     return count
 }
