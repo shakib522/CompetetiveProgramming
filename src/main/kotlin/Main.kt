@@ -1,14 +1,21 @@
-import java.util.*
+package src.main.kotlin
 
 fun main() {
-    val scanner=Scanner(System.`in`)
-    val n=scanner.nextInt()
-    val array=Array<Int>(n){2}
-    array.forEach {
-        print("$it ")
-    }
+    val list= mutableListOf<String>()
+    generatePermutation("","abc",list)
+    println(list)
 }
 
-//fun mostCommonWord(paragraph: String, banned: Array<String>): String {
-//
-//}
+fun generatePermutation(processed:String,unProcessed:String,ans:MutableList<String>):MutableList<String>{
+    if (unProcessed.isEmpty()){
+        ans.add(processed)
+        return ans
+    }
+    val ch=unProcessed[0]
+    for (i in 0..processed.length){
+        val first=processed.substring(0,i)
+        val second=processed.substring(i,processed.length)
+        generatePermutation(first+ch+second,unProcessed.substring(1),ans)
+    }
+    return ans
+}
