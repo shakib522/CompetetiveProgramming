@@ -1,11 +1,5 @@
 package src.main.kotlin.leetcode.top100
 
-
-fun main() {
-
-}
-
-
 fun invertTree(root: TreeNode?): TreeNode? {
     val deque = ArrayDeque<TreeNode?>()
     deque.addFirst(root)
