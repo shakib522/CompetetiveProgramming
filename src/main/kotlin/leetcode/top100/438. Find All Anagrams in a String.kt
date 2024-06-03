@@ -25,6 +25,7 @@ fun isContain(s1: String, s2: String): Boolean {
     for (i in s2.indices) {
         ara2[s2[i].code - 97]++
     }
+    val deq=ArrayDeque<Int>()
     for (i in s1.indices) {
         ara[s1[i].code - 97]++
     }
