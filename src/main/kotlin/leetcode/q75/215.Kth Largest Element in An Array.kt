@@ -1,8 +1,6 @@
 package src.main.kotlin.leetcode.q75
 
 import java.util.*
-import kotlin.Comparator
-import kotlin.math.max
 
 fun main() {
     val scan= Scanner(System.`in`)
