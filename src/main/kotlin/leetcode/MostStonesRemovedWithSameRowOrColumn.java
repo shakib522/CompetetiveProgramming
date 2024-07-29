@@ -1,7 +1,6 @@
 package src.main.kotlin.leetcode;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class MostStonesRemovedWithSameRowOrColumn {
@@ -14,7 +13,6 @@ public class MostStonesRemovedWithSameRowOrColumn {
                 }
             }
         }
-        HashMap<Integer, Integer> map = new HashMap<>();
         int len = stones.length;
         int[] hash = new int[len];
         int ans = 0;
