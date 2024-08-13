@@ -1,5 +1,7 @@
 package src.main.kotlin.leetcode;
 
+import java.lang.ref.SoftReference;
+import java.lang.ref.WeakReference;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
