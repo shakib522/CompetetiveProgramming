@@ -1,10 +1,5 @@
 package src.main.kotlin.leetcode.top100.javaSolution;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-
 public class MedianofTwoSortedArrays {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int len1=nums1.length;
