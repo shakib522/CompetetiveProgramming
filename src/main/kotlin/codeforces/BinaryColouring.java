@@ -1,4 +1,4 @@
-package src.main.kotlin.codeforces.B;
+package src.main.kotlin.codeforces;
 
 import java.util.Scanner;
 
