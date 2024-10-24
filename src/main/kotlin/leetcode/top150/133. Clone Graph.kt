@@ -1,8 +1,8 @@
 package src.main.kotlin.leetcode.top150
 
-class Node(var `val`: Int) {
-    var neighbors: ArrayList<Node?> = ArrayList<Node?>()
-}
+//class Node(var `val`: Int) {
+//    var neighbors: ArrayList<Node?> = ArrayList<Node?>()
+//}
 
 
 //
