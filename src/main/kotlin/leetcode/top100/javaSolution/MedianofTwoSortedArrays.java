@@ -4,24 +4,37 @@ public class MedianofTwoSortedArrays {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int len1=nums1.length;
         int len2=nums2.length;
-        int total=len2+len1;
-        int index=total/2;
-        int index2=0;
-        if (total%2==0){
-            index2=(index-1);
-            int n1=returnNumber(index,nums1,nums2);
-            int n2=returnNumber(index2,nums1,nums2);
-            return (n1+n2)/2.0;
-        }else{
-            return returnNumber(index,nums1,nums2);
+        int[] mergeAra = new int[len1+len2];
+        int ptr1=0;
+        int ptr2=0;
+        int ptr3=0;
+        while (ptr1<len1&&ptr2<len2){
+            if (nums1[ptr1]<nums2[ptr2]){
+                mergeAra[ptr3]=nums1[ptr1];
+                ptr1++;
+            }else{
+                mergeAra[ptr3]=nums2[ptr2];
+                ptr2++;
+            }
+            ptr3++;
         }
-    }
-    public int returnNumber(int index,int[] num1,int[] num2){
-        if (num1.length<=index){
-            index-= num1.length;
-            return num2[index];
-        }else{
-            return num1[index];
+        while (ptr1<len1){
+                mergeAra[ptr3]=nums1[ptr1];
+                ptr1++;
+                ptr3++;
         }
+        while (ptr2<len2){
+            mergeAra[ptr3]=nums2[ptr2];
+            ptr2++;
+            ptr3++;
+        }
+        double ans=0.0;
+        int mid=(len1+len2)/2;
+        if (((len1+len2)&1)==0){
+            ans = (mergeAra[mid]+mergeAra[mid-1])/2.0;
+        }else{
+            ans=mergeAra[mid];
+        }
+        return ans;
     }
 }
