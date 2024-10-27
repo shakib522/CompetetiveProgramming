@@ -3,10 +3,10 @@ package src.main.kotlin.leetcode.top100;
 import java.util.HashMap;
 import java.util.Map;
 
- class ListNode {
+ class ListNodes {
       int val;
-     ListNode next;
-      ListNode(int x) {
+     ListNodes next;
+     ListNodes(int x) {
           val = x;
           next = null;
       }
@@ -16,8 +16,8 @@ import java.util.Map;
 
 
 public class IntersectionOfTwoLinkedLists {
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        Map<ListNode,Integer> map = new HashMap<>();
+    public ListNodes getIntersectionNode(ListNodes headA, ListNodes headB) {
+        Map<ListNodes,Integer> map = new HashMap<>();
         while (headA!=null){
             map.put(headA,headA.val);
             headA=headA.next;
@@ -33,9 +33,9 @@ public class IntersectionOfTwoLinkedLists {
         return null;
     }
 
-    public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
-        ListNode a=headA;
-        ListNode b=headB;
+    public ListNodes getIntersectionNode2(ListNodes headA, ListNodes headB) {
+        ListNodes a=headA;
+        ListNodes b=headB;
         while (a!=b){
             if (a==null && b==null){
                 return null;

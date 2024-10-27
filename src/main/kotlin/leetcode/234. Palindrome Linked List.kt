@@ -1,18 +1,19 @@
 package src.main.kotlin.leetcode
 
-import src.main.kotlin.leetcode.top100.ListNode
+import src.main.kotlin.leetcode.q75.ListNode
+
 fun main(){
     val head=ListNode(2)
     head.next=ListNode(1)
     head.next?.next=ListNode(1)
     head.next?.next?.next=ListNode(2)
     println(isPalindromeRecursive(head,head))
-//    isPalindrome(head)
+    isPalindrome(head)
 }
 fun printLinkedList(head:ListNode?){
     var currentNode=head
     while (currentNode !=null){
-        println("${currentNode.`val`} ")
+        println("${currentNode.valu} ")
         currentNode=currentNode.next
     }
     println()
@@ -24,9 +25,9 @@ fun isPalindromeRecursive(curNode:ListNode?,head:ListNode?):Boolean{
         return true
     }
     val res= isPalindromeRecursive(curNode.next,head)
-    val temp= cur?.`val`
+    val temp= cur?.valu
     cur=cur?.next
-    return (temp==curNode.`val` ) && res
+    return (temp==curNode.valu ) && res
 }
 
 fun isPalindrome(head: ListNode?): Boolean {
@@ -43,7 +44,7 @@ fun isPalindrome(head: ListNode?): Boolean {
     while (reversedList!=null&&normalList!=null){
 //        println("reverse list: "+reversedList.`val`)
 //        println("normal list: "+normalList.`val`)
-        if(reversedList.`val`!=normalList.`val`){
+        if(reversedList.valu!=normalList.valu){
             return false
         }
         reversedList=reversedList.next
