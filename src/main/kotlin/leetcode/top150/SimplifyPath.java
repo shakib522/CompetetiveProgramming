@@ -20,6 +20,7 @@ public class SimplifyPath {
                 }
             }
         }
+//        return "/"+String.join("/",st); //less optimized
         StringBuilder ans = new StringBuilder("/");
         List<String> list = new ArrayList<>(st);
         int len=list.size();
