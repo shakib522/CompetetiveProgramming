@@ -1,6 +1,6 @@
 package src.main.kotlin.codeforces;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class B {
     static Scanner scan = new Scanner(System.in);
@@ -13,37 +13,31 @@ public class B {
     }
 
     public static void solve() {
-        int n = scan.nextInt();
-        String even = "3366";
-        String odd = "36366";
-        if (n==1){
-            System.out.println("-1");
-            return;
-        }
-        if (n==2){
-            System.out.println("66");
-            return;
-        }
-        if (n==3){
-            System.out.println("-1");
-            return;
-        }
-        if ((n &1) == 0) {
-            int concat = n - 4;
-            StringBuilder builder = new StringBuilder();
-            for (int i = 0; i < concat; i++) {
-                builder.append("3");
+        int n=scan.nextInt();
+        int k=scan.nextInt();
+        Map<Integer,Long> map = new HashMap<>();
+        for (int i = 0; i <k; i++) {
+            int bi=scan.nextInt();
+            int cost=scan.nextInt();
+            if (map.containsKey(bi)){
+                map.put(bi,map.get(bi)+cost);
+            }else{
+                map.put(bi,(long)cost);
             }
-            System.out.println(builder+even);
-            return;
-        } else {
-            int concat = n - 5;
-            StringBuilder builder = new StringBuilder();
-            for (int i = 0; i < concat; i++) {
-                builder.append("3");
-            }
-            System.out.println(builder+odd);
-            return;
         }
+        List<Map.Entry<Integer,Long>> list = new ArrayList<>(map.entrySet());
+        list.sort(new Comparator<Map.Entry<Integer, Long>>() {
+            @Override
+            public int compare(Map.Entry<Integer, Long> o1, Map.Entry<Integer, Long> o2) {
+                return (int) (o2.getValue()-o1.getValue());
+            }
+        });
+       long ans=0;
+
+       int range=Math.min(n,k);
+       for (int i=0;i<Math.min(range,list.size());i++){
+           ans+=list.get(i).getValue();
+       }
+        System.out.println(ans);
     }
 }

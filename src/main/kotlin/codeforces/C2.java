@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class C {
+public class C2 {
     static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
         int testCase = scan.nextInt();
