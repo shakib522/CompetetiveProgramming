@@ -1,7 +1,6 @@
 package src.main.kotlin.leetcode.top100.javaSolution;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class AddTwoNumber {
 }
@@ -54,6 +53,61 @@ class SolutionOfAdd {
         if (cary > 0) {
             System.out.println("Cary:" + cary);
             node.next = new ListNode(cary);
+        }
+        return head.next;
+    }
+    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
+        Deque<Integer> digits = new ArrayDeque<>();
+        while (l1 != null) {
+            digits.addLast(l1.val);
+            l1 = l1.next;
+        }
+        Deque<Integer> digits2 = new ArrayDeque<>();
+        while (l2 != null) {
+            digits2.addLast(l2.val);
+            l2 = l2.next;
+        }
+        ListNode node = new ListNode();
+        ListNode head = node;
+        int cary = 0;
+        while (!digits2.isEmpty()  && !digits.isEmpty()) {
+            System.out.println("digit: "+digits.peek());
+            System.out.println("digit2: "+digits2.peek());
+            int num = digits.poll()+ digits2.pop() + cary;
+            node.next = new ListNode(num % 10);
+            node = node.next;
+            cary = num / 10;
+        }
+        while (!digits.isEmpty()) {
+            int num = digits.poll() + cary;
+            node.next = new ListNode(num % 10);
+            node = node.next;
+            cary = num / 10;
+        }
+        while (!digits2.isEmpty()) {
+            int num = digits2.poll() + cary;
+            node.next = new ListNode(num % 10);
+            node = node.next;
+            cary = num / 10;
+        }
+        if (cary > 0) {
+            node.next = new ListNode(cary);
+        }
+        return head.next;
+    }
+    public ListNode addTwoNumbers3(ListNode l1, ListNode l2) {
+        ListNode node = new ListNode(0);
+        ListNode head = node;
+        int cary = 0;
+        while (l1!=null || l2!=null || cary!=0) {
+            int digit1= (l1!=null) ? l1.val:0;
+            int digit2=(l2!=null) ? l2.val:0;
+            int num = digit1+ digit2 + cary;
+            node.next = new ListNode(num % 10);
+            node = node.next;
+            cary = num / 10;
+            l1=(l1!=null)?l1.next:null;
+            l2=(l2!=null)?l2.next:null;
         }
         return head.next;
     }
