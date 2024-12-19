@@ -18,4 +18,17 @@ public class MaxChunksToMakeSorted {
         }
         return st.size();
     }
+    public int maxChunksToSorted2(int[] arr) {
+        int ans=0;
+        int prefixSum=0;
+        int indexSum=0;
+        for (int i = 0; i < arr.length; i++) {
+           prefixSum+=arr[i];
+           indexSum+=i;
+           if (prefixSum==indexSum){
+               ans++;
+           }
+        }
+        return ans;
+    }
 }
